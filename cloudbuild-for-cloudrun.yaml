@@ -1,0 +1,21 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'asia.gcr.io/[Your Firebase Project ID]/[Your docker name]', '.' ]
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'push', 'asia.gcr.io/[Your Firebase Project ID]/[Your docker name]' ]
+  #  Deploy container image to Cloud Run
+  - name: 'google/cloud-sdk:alpine'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - '[Your docker name]'
+      - '--image=asia.gcr.io/[Your Firebase Project ID]/[Your docker name]'
+      - '--region=asia-northeast1'
+      - '--platform=managed'
+      - '--allow-unauthenticated'
+images:
+  - asia.gcr.io/[Your Firebase Project ID]/[Your docker name]
+options:
+  machineType: 'N1_HIGHCPU_8'

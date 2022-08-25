@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "[Your Firebase Project ID]"
+  },
+  "targets": {
+      "[Your Firebase Project ID]": {
+        "hosting": {
+          "[Your Hosting ID]": [
+            "[Your Hosting ID]"
+          ]
+        }
+      }
+    }
+}

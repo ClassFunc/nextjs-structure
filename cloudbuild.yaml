@@ -1,0 +1,22 @@
+steps:
+  - name: node:16-alpine
+    entrypoint: yarn
+    args:
+      - install
+  - name: node:16-alpine
+    entrypoint: yarn
+    args:
+      - run
+      - build:production
+  - name: node:16-alpine
+    entrypoint: yarn
+    args:
+      - run
+      - export
+  - name: 'gcr.io/[Your Firebase Project ID]/firebase'
+    args: [ 'deploy','--only','hosting:[Your Hosting ID]' ]
+    timeout: 600s
+    env:
+      - '_FIREBASE_TOKEN=$_FIREBASE_TOKEN'
+options:
+  machineType: 'N1_HIGHCPU_8'
