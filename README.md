@@ -11,6 +11,7 @@ yarn dev
 ## Usage
 
 ```html
+- Nextjs + Typescript
 - Tailwind css setting, daisy ui setting
 - Firebase hosting setting [.firebaserc, firebase.json]
 - GCP Cloud build hosting setting [cloudbuild.yaml]
