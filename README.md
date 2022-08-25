@@ -12,9 +12,9 @@ yarn dev
 
 ```html
 - Tailwind css setting, daisy ui setting
-- Firebase hosting setting
-- GCP Cloud build setting [.firebaserc, firebase.json, cloudbuild.yaml]
-- GCP Cloud run setting [Dockerfile, cloudbuild-for-cloudrun.yaml]
+- Firebase hosting setting [.firebaserc, firebase.json]
+- GCP Cloud build hosting setting [cloudbuild.yaml]
+- GCP Cloud build cloud run setting [Dockerfile, cloudbuild-for-cloudrun.yaml]
 - State management: Jotai & Vatio setting
 ```
 
